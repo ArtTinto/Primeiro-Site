@@ -8,7 +8,7 @@
     <meta name="autor" content="Arthur Ferreira">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
     </style>
     <title>Currículo</title>
@@ -38,14 +38,6 @@
 
             </ul>
         </nav>
-        <p>Estudante de Engenharia da Computação</p>
-        <address>
-            <p>Email: <strong href="arthuzao26@gmail.com">
-                    arthurzao26@gmail.com</strong></p>
-            <p>Numero de Contato: <strong href="tel: +5531988348196">
-                    (31)98834-8196</strong></p>
-            <p>GitHub: <strong href="https://github.com/ArtTinto"></strong></p>
-        </address>
     </header>
 
     <hr>
@@ -102,7 +94,7 @@
         <section id="habilidades">
             <h2>Linguagens de Progamação</h2>
             <p>
-            <ul>
+            <ul type="square">
                 <li><strong>Python</strong> - 6 meses</li>
                 <li><strong>Java</strong> - Em andamento</li>
                 <li><strong>HTML</strong> - Em andamento</li>
@@ -111,29 +103,63 @@
 
         <hr>
 
+        <section id="contato">
+            <h2>Contato</h2>
+            <form action="/contato" method="post">
+                <fieldset>
+                    <legend>Suas informaçoes para contato</legend>
+
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                    <br>
+
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email" required>
+                    <br>
+
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" name="telefone" id="telefone">
+                    <br>
+
+                    <label for="mensagem">Porque deseja contatar:</label>
+                    <br>
+                    <textarea name="mensagem" id="mensagem" rows="5" cols="50"></textarea>
+                    <br>
+
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpar</button>
+
+                </fieldset>
+                <address>
+                    <p>Email: <strong href="arthuzao26@gmail.com">
+                            arthurzao26@gmail.com</strong></p>
+                    <p>Numero de Contato: <strong href="tel: +5531988348196">
+                            (31)98834-8196</strong></p>
+                </address>
+            </form>
+
+        </section>
+    </main>
+
+    <hr>
+    <footer>
+
         <aside>
             <h2>Informaçoes Complementares</h2>
-            <ul>
+            <ul type="square">
                 <li>Ingles Médio</li>
                 <li>Disponivel</li>
             </ul>
         </aside>
-    </main>
 
-    <hr>
+        <address>
+            <p>Instagram:<a href="https://www.instagram.com/art.tinto/">
+                    <strong>https://www.instagram.com/art.tinto/</strong></a>
+        </address>
 
-    <section id="contato">
-            <h2>Contato</h2>
-            <address>
-                <p>Email: <strong href="arthuzao26@gmail.com">
-                        arthurzao26@gmail.com</strong></p>
-                <p>Numero de Contato: <strong href="tel: +5531988348196">
-                        (31)98834-8196</strong></p>
-            </address>
-            <p><small>& copy ; 2024 Arthur Ferreira. Todos os direitos
-                    reservados . </small></p>
-        </footer>
-    </section>
+        <p><small>& copy ; 2024 Arthur Ferreira. Todos os direitos
+                reservados . </small></p>
+    </footer>
 </body>
 
 </html>
