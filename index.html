@@ -6,159 +6,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="descrição" content="Curriculo de Arthur Ferreira">
     <meta name="autor" content="Arthur Ferreira">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-    </style>
     <title>Currículo</title>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <h1>Arthur Ferreira Reis - Engenharia da Computação</h1>
-        <p><strong>Estudante de Engenharia da Computação</strong></p>
-        <address>
-            <p>Email: <a href="arthuzao26@gmail.com">
-                    <strong>arthurzao26@gmail.com</strong></a></p>
-            <p>Numero de Contato: <a href="tel:+5531988348196">
-                    <strong>(31)98834-8196</strong></a></p>
-            <p>GitHub: <a href="https://github.com/ArtTinto">
-                    <strong>https://github.com/ArtTinto</strong></a></p>
+    <div class="container">
+        <header class="header">
 
-        </address>
-        <nav>
-            <ul>
-                <li><a href="#sobre_mim">Sobre Mim</a></li>
-                <li><a href="#formacoes">Formações</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#contato">Entre em contato</a></li>
-
-
-            </ul>
-        </nav>
-    </header>
-
-    <hr>
-
-    <main>
-        <section id="sobre_mim">
-
-            <h2>Sobre mim</h2>
-            <figure>
-                <img src="Myimage.jpg" alt="Minha foto" width="200">
-            </figure>
-            <p>Nascido em <strong>Coronel Fabriciano</strong> com <strong><em>Ensino Médio
-                        Completo</em></strong> atualmente estudante de Engenharia da Computação do <strong><em>
-                        Cefet-MG</em></strong> atualmente desempregado e novo na área da computação.<br>
-                <br>
-
-                Tenho interesses em vagas de progamador focado em linguagens como <strong>Python</strong> e
-                <strong>Java</strong>
-                já fiz trabalhos com <em>IA</em> de forma bem básica e almejo áreas na progamação visando vagas de
-                <em>Backend</em>.
-                Minhas motivações e prospecções para a área é a criação de tecnologias inovadoras e aplicação do
-                conhecimento para
-                desenvolver e contribuir para a solução de programas reais para a area da computação
-            </p>
-        </section>
-
-        <hr>
-
-        <section id="formacoes">
-            <table>
-                <caption>
-                    <h2>Certificações e Formações</h2>
-                </caption>
-                <thead>
-                    <tr>
-                        <th>Periodo</th>
-                        <th>Instituição</th>
-                        <th>Formação</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2013-2024</td>
-                        <td>Colegio João Calvino</td>
-                        <td>Ensino Médio</td>
-                        <td>Completo</td>
-                    </tr>
-                    <tr>
-                        <td>2025-</td>
-                        <td>Cefet-MG</td>
-                        <td>Graduação</td>
-                        <td>Em Andamento</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <hr>
-
-        <section id="habilidades">
-            <h2>Linguagens de Progamação</h2>
-            <p>
-            <ul type="square">
-                <li><strong>Python</strong> - 6 meses</li>
-                <li><strong>Java</strong> - 1 mês</li>
-            </ul>
-        </section>
-
-        <hr>
-
-        <section id="contato">
-            <h2>Contato</h2>
-            <form action="/contato" method="post">
-                <fieldset>
-                    <legend>Suas informaçoes para contato</legend>
-
-                    <label for="nome">Nome Completo:</label>
-                    <input type="text" id="nome" name="nome" required>
-                    <br>
-
-                    <label for="email">Email:</label>
-                    <input type="text" name="email" id="email" required>
-                    <br>
-
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" name="telefone" id="telefone">
-                    <br>
-
-                    <label for="mensagem">Porque deseja contatar:</label>
-                    <br>
-                    <textarea name="mensagem" id="mensagem" rows="5" cols="50"></textarea>
-                    <br>
-
-                    <button type="submit">Enviar</button>
-                    <button type="reset">Limpar</button>
-
-                </fieldset>
-            </form>
-
-            <address>
+            <h1>Arthur Ferreira Reis - Engenharia da Computação</h1>
+            <p><strong>Estudante de Engenharia da Computação</strong></p>
+            <address class="contact-info">
                 <p>Email: <a href="arthuzao26@gmail.com">
                         <strong>arthurzao26@gmail.com</strong></a></p>
                 <p>Numero de Contato: <a href="tel:+5531988348196">
                         <strong>(31)98834-8196</strong></a></p>
+                <p>GitHub: <a href="https://github.com/ArtTinto">
+                        <strong>https://github.com/ArtTinto</strong></a></p>
+
             </address>
-        </section>
-    </main>
+        </header>
 
-    <hr>
+        <nav class="navigation">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#sobre_mim" class="nav-link">Sobre Mim</a></li>
+                <li class="nav-item"><a href="#formacoes" class="nav-link">Formações</a></li>
+                <li class="nav-item"><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li class="nav-item"><a href="#contato" class="nav-link">Entre em contato</a></li>
 
-    <footer>
-
-        <aside>
-            <h2>Informaçoes Complementares</h2>
-            <ul type="square">
-                <li>Ingles Médio</li>
-                <li>Disponivel</li>
             </ul>
-        </aside>
+        </nav>
 
+        <main class="main-content">
+            <section id="sobre_mim" class="section">
+
+                <h2>Sobre mim</h2>
+                <figure>
+                    <img src="Myimage.jpg" alt="Minha foto" width="200">
+                </figure>
+                <p>Nascido em <strong>Coronel Fabriciano</strong> com <strong><em>Ensino Médio
+                            Completo</em></strong> atualmente estudante de Engenharia da Computação do <strong><em>
+                            Cefet-MG</em></strong> atualmente desempregado e novo na área da computação.<br>
+                    <br>
+
+                    Tenho interesses em vagas de progamador focado em linguagens como <strong>Python</strong> e
+                    <strong>Java</strong>
+                    já fiz trabalhos com <em>IA</em> de forma bem básica e almejo áreas na progamação visando vagas de
+                    <em>Backend</em>.
+                    Minhas motivações e prospecções para a área é a criação de tecnologias inovadoras e aplicação do
+                    conhecimento para
+                    desenvolver e contribuir para a solução de programas reais para a area da computação
+                </p>
+            </section>
+
+            <section id="formacoes" class="section">
+                <table>
+                    <caption>
+                        <h2>Certificações e Formações</h2>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>Periodo</th>
+                            <th>Instituição</th>
+                            <th>Formação</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2013-2024</td>
+                            <td>Colegio João Calvino</td>
+                            <td>Ensino Médio</td>
+                            <td>Completo</td>
+                        </tr>
+                        <tr>
+                            <td>2025-</td>
+                            <td>Cefet-MG</td>
+                            <td>Graduação</td>
+                            <td>Em Andamento</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+
+            <section id="habilidades" class="section">
+                <h2>Linguagens de Progamação</h2>
+                <p>
+                <ul type="square">
+                    <li><strong>Python</strong> - 6 meses</li>
+                    <li><strong>Java</strong> - 1 mês</li>
+                </ul>
+            </section>
+
+
+            <section id="contato" class="section">
+                <h2>Contato</h2>
+                <form action="/contato" method="post">
+                    <fieldset>
+                        <legend>Suas informaçoes para contato</legend>
+
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                        <br>
+
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" required>
+                        <br>
+
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" name="telefone" id="telefone">
+                        <br>
+
+                        <label for="mensagem">Porque deseja contatar:</label>
+                        <br>
+                        <textarea name="mensagem" id="mensagem" rows="5" cols="50"></textarea>
+                        <br>
+
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Limpar</button>
+
+                    </fieldset>
+                </form>
+
+                <address>
+                    <p>Email: <a href="arthuzao26@gmail.com">
+                            <strong>arthurzao26@gmail.com</strong></a></p>
+                    <p>Numero de Contato: <a href="tel:+5531988348196">
+                            <strong>(31)98834-8196</strong></a></p>
+                </address>
+            </section>
+        </main>
+
+
+    </div>
+    
+    <aside class="sidebar">
+        <h2>Informaçoes Complementares</h2>
+        <ul type="square">
+            <li>Ingles Médio</li>
+            <li>Disponivel</li>
+        </ul>
+    </aside>
+    
+    <footer class="footer">
         <address>
             <p>Instagram:<a href="https://www.instagram.com/art.tinto/">
                     <strong>https://www.instagram.com/art.tinto/</strong></a>
