@@ -64,14 +64,14 @@ li {
   color: #b1a7a6;
   padding: 3em 0;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0. 1);
 }
 
 .headerh1 {
   color: white;
   font-size: 3em;
   margin-bottom: 0, 3em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0, 3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0. 3);
 }
 
 .headerp {
@@ -125,11 +125,35 @@ li {
   margin-bottom: 3em;
   padding-bottom: 2em;
   border-bottom: 1px solid #e2fdff;
+  border-radius: 10px;
 }
 
 .section:last-child {
   border-bottom: none;
   margin-bottom: 0;
+}
+
+table {
+  background-color: #f8f9fa;
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-collapse: collapse;
+}
+
+table:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+th,
+td {
+  border: 2px solid #2196f3;
+  padding: 10px 15px;
+  text-align: center;
+  box-shadow: #b1a7a6;
 }
 
 .contact-info {
@@ -152,4 +176,77 @@ li {
   text-align: center;
   padding: 2em 0;
   margin-top: 3em;
+}
+
+#sobre_mim {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  /*background*/
+  color: #90caf9;
+  padding: 2em;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#sobre h2 {
+  color: black;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#sobre p {
+  font-size: 1.1em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#formacoes {
+  position: relative;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+
+#habilidades {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 2em;
+  border-radius: 8px;
+}
+
+#habilidades ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+  list-style: none;
+  padding: 0;
+}
+
+#habilidades li {
+  background-color: #e2fdff;
+  padding: 1em;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0. 1);
+  transition: transform 0.2s ease;
+}
+
+#habilidades li:hover {
+  transform: scale(1.05);
+}
+
+#contato {
+  background: #2c3e50;
+  color: white;
+  padding: 2em;
+  border-radius: 10px;
+}
+
+#contato h2 {
+  color: #64b5f6;
+  border-bottom: 2px solid #3498db;
+}
+
+#contato a {
+  color: #3498db;
+}
+
+#contato a:hover {
+  color: #1e90ff;
+  text-shadow: 0 0 8px #1e90ff;
 }
