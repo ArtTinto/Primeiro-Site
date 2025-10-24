@@ -9,7 +9,7 @@
 
 /* Cor de fundo da página */
 body {
-    background: linear-gradient( darkgray 0%, lightgray 100%)
+    background-color: lightgray;
 }
 
 /* Título principal */
@@ -81,7 +81,6 @@ h2 {
 
 /* Aside com gradiente e arredondamento */
 .aside {
-
     padding: 2em;
     border-radius: 10px;
     text-align: center;
