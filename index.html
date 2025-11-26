@@ -12,7 +12,7 @@
 <body>
     <header
         class="d-flex flex-column flex-md-row align-items-center justify-content-between py-3 px-4 bg-dark text-white sticky-top">
-        <!-- Logo e Título -->
+
         <div class="d-flex align-items-center mb-2 mb-md-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-nvidia me-2"
                 viewBox="0 0 16 16">
@@ -22,7 +22,7 @@
             <h1 class="h4 m-0">Currículo</h1>
         </div>
 
-        <!-- Nav -->
+
         <ul class="nav justify-content-center flex-grow-1">
             <li class="nav-item"><a class="nav-link text-white" href="#sobre_mim">Sobre Mim</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#formacoes">Formações</a></li>
@@ -30,7 +30,7 @@
             <li class="nav-item"><a class="nav-link text-white" href="#contato">Contato</a></li>
         </ul>
 
-        <!-- WhatsApp -->
+
         <div class="d-flex align-items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="green" class="bi bi-whatsapp me-2"
                 viewBox="0 0 16 16">
@@ -140,10 +140,10 @@
 
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-8 col-lg-6">
-                                <form class="needs-validation" novalidate>
+                                <form class="needs-validation" >
                                     <div class="mb-3">
                                         <label for="nome" class="form-label">Nome Completo</label>
-                                        <input type="text" class="form-control" id="nome" required>
+                                        <input type="text" class="form-control" id="nome" minlength="3" placeholder="Digite seu nome" required>
                                         <div class="invalid-feedback">
                                             Por favor, insira seu nome completo.
                                         </div>
@@ -151,7 +151,7 @@
 
                                     <div class="mb-3">
                                         <label for="email" class="form-label">E-mail</label>
-                                        <input type="email" class="form-control" id="email" required>
+                                        <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
                                         <div class="invalid-feedback">
                                             Por favor, insira um e-mail válido.
                                         </div>
