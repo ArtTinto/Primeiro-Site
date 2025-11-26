@@ -188,6 +188,7 @@ a[href^="#"] {
 .table {
     opacity: 0;
     animation: fadeIn 1s ease-in-out forwards;
+    grid: auto;
 }
 
 /* Animação fade in */
@@ -274,7 +275,11 @@ a[href^="#"] {
 /* Nav dentro do header */
 .nav {
   display: flex;
-  gap: 8rem; /* espaçamento entre os itens do menu */
+  flex-wrap: nowrap;
+  gap: 6rem; /* espaçamento entre os itens do menu */
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .nav a {
@@ -289,6 +294,3 @@ a[href^="#"] {
     background: linear-gradient(135deg, darkgray 100%, lightgray 0%);
 }
 
-/* ===================== IDS ===================== */
-
-/* IDs já estão com #habilidades e #contato definidos acima */
