@@ -51,7 +51,6 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
-
 /* ===================== NAVEGAÇÃO E BOTÕES ===================== */
 .nav-menu {
     gap: 6rem;
@@ -87,11 +86,18 @@
 .card-custom {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid white; 
-    margin-bottom: 1.5rem;
+    /* Esta margem é tratada pelo g-4 no HTML */
+    margin-bottom: 0; 
 }
+
 .card-custom:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Espaçamento da imagem do card */
+.card-img-top-custom {
+    padding: 0.5rem;
 }
 
 .text-purple { color: #9C27B0; }
@@ -145,7 +151,6 @@
     border-bottom: 2px solid #ccc;
 }
 
-
 /* ===================== FOOTER ===================== */
 footer .nav {
     gap: 3rem; 
@@ -163,7 +168,6 @@ footer .nav {
     transform: scale(1.1); 
     color: white !important; 
 }
-
 
 /* ===================== RESPONSIVIDADE ===================== */
 @media (max-width: 768px) {
