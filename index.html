@@ -4,19 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Links para Bootstrap e o CSS reduzido -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <title>Curriculo</title>
 </head>
 
 <body class="bg-light-gray">
-    <!-- Header: d-flex, bg-dark, text-white, padding e alinhamento responsivo -->
-    <header class="d-flex flex-column flex-md-row align-items-center justify-content-between py-3 px-4 bg-dark text-white">
+    <header
+        class="d-flex flex-column flex-md-row align-items-center justify-content-between py-3 px-4 bg-dark text-white">
 
         <div class="d-flex align-items-center mb-2 mb-md-0">
-            <!-- Cor verde definida diretamente no SVG para otimização -->
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="green" class="bi bi-nvidia me-2"
                 viewBox="0 0 16 16">
                 <path
@@ -24,7 +23,7 @@
             </svg>
             <h1 class="h4 m-0 text-center">Currículo</h1>
         </div>
-        
+
         <div class="d-flex align-items-center d-md-flex">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="green" class="bi bi-whatsapp me-2"
                 viewBox="0 0 16 16">
@@ -35,31 +34,26 @@
         </div>
     </header>
 
-    <!-- Navbar: fixed-top (sticky-top), bg-dark, centralizado, flex-grow-1, py-2 -->
     <nav class="bg-dark sticky-top" style="z-index: 100;">
-        <!-- .nav-menu custom class for custom CSS gap/hover/responsiveness -->
         <ul class="nav nav-menu justify-content-center flex-grow-1 py-2">
             <li class="nav-item"><a class="nav-link text-white nav-link-custom" href="#sobre_mim">Sobre Mim</a></li>
             <li class="nav-item"><a class="nav-link text-white nav-link-custom" href="#formacoes">Formações</a></li>
             <li class="nav-item"><a class="nav-link text-white nav-link-custom" href="#habilidades">Habilidades</a></li>
-            <li class="nav-item"><a class="nav-link text-white nav-link-custom" href="#projetos">Projetos</a></li> 
+            <li class="nav-item"><a class="nav-link text-white nav-link-custom" href="#projetos">Projetos</a></li>
             <li class="nav-item"><a class="nav-link text-white nav-link-custom" href="#contato">Contato</a></li>
         </ul>
     </nav>
-    
-    <!-- Container principal (max-width centralizado) -->
+
     <div class="container container-custom">
 
         <main class="main-content">
 
-            <!-- Card Section 1: Adicionado rounded-4 para mais arredondamento -->
             <div class="card-section rounded-4">
                 <section id="sobre_mim" class="sobre section-block">
-                    <!-- Título H2 customizado -->
                     <h2 class="display-5 fw-bold text-body-emphasis custom-h2">Engenharia Da Computação</h2>
-                    <div class="px-4 py-5 my-5 text-center"> 
-                        <img class="image d-block mx-auto mb-4 rounded-3"
-                            src="img/Myimage.jpg" alt="Minha foto" width="300">
+                    <div class="px-4 py-5 my-5 text-center">
+                        <img class="image d-block mx-auto mb-4 rounded-3" src="img/Myimage.jpg" alt="Minha foto"
+                            width="300">
                         <div class="col-lg-6 mx-auto">
                             <p>
                                 Nascido em <strong>Coronel Fabriciano</strong> com <strong><em>Ensino Médio
@@ -81,7 +75,6 @@
                 </section>
             </div>
 
-            <!-- Card Section 2: Formações - Adicionado rounded-4 -->
             <div class="card-section rounded-4">
                 <section id="formacoes" class="py-5 section-block">
                     <div class="row">
@@ -93,7 +86,6 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="table-responsive">
-                                <!-- Tabela restaurada, removendo classes de animação -->
                                 <table class="table table-striped mt-3">
                                     <thead class="table-dark">
                                         <tr>
@@ -128,23 +120,21 @@
                 </section>
             </div>
 
-            <!-- Card Section 3: Projetos - Adicionado rounded-4 -->
             <div class="card-section rounded-4">
                 <section id="projetos" class="py-5 section-block">
                     <h2 class="text-center mb-5 custom-h2">Meus Projetos</h2>
-                    <!-- row-cols-1/row-cols-md-3 garante que a grade de cards fique uniforme -->
-                    <!-- Adicionando row-cols-* para que os cards ocupem o espaço corretamente -->
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                         <div class="col">
-                            <!-- h-100 garante que todos os cards tenham a mesma altura -->
                             <div class="card card-custom h-100">
-                                <!-- card-img-top-custom para adicionar espaçamento interno -->
-                                <img src="img/TikTakToeTerminal.png" class="card-img-top card-img-top-custom" alt="Imagem do Projeto">
+                                <img src="img/TikTakToeTerminal.png" class="card-img-top card-img-top-custom"
+                                    alt="Imagem do Projeto">
                                 <div class="card-body">
                                     <h5 class="card-title text-purple">Jogo da Velha em Java</h5>
-                                    <p class="card-text">Jogo da velha feito no terminal puramente em Java incluindo um modo impossível.</p>
-                                    <div class="d-flex gap-2 flex-wrap mt-auto"> 
-                                        <a href="https://github.com/ArtTinto/TikTakToe" class="btn btn-primary-custom">Ver Mais</a>
+                                    <p class="card-text">Jogo da velha feito no terminal puramente em Java incluindo um
+                                        modo impossível.</p>
+                                    <div class="d-flex gap-2 flex-wrap mt-auto">
+                                        <a href="https://github.com/ArtTinto/TikTakToe"
+                                            class="btn btn-primary-custom">Ver Mais</a>
                                     </div>
                                 </div>
                             </div>
@@ -152,12 +142,17 @@
 
                         <div class="col">
                             <div class="card card-custom h-100">
-                                <img src="img/TikTakToeWeb.png" class="card-img-top card-img-top-custom" alt="Imagem do Projeto">
+                                <img src="img/TikTakToeWeb.png" class="card-img-top card-img-top-custom"
+                                    alt="Imagem do Projeto">
                                 <div class="card-body">
                                     <h5 class="card-title text-purple">Jogo da Velha Web</h5>
-                                    <p class="card-text">Jogo da velha jogador vs jogador hospedado em página web que utiliza de CSS e JavaScript.</p>
+                                    <p class="card-text">Jogo da velha jogador vs jogador hospedado em página web que
+                                        utiliza de CSS e JavaScript.</p>
                                     <div class="d-flex gap-2 flex-wrap mt-auto">
-                                        <a href="https://github.com/ArtTinto/TikTakToe-1v1-HTML" class="btn btn-primary-custom">Ver Mais</a>
+                                        <a href="https://github.com/ArtTinto/TikTakToe-1v1-HTML"
+                                            class="btn btn-primary-custom">Ver Mais</a>
+                                            <a href="http://tiktaktoe-web-c70142.pages.alessiojr.com/"
+                                                class="btn btn-secondary-custom">Jogue</a>
                                     </div>
                                 </div>
                             </div>
@@ -165,34 +160,33 @@
 
                         <div class="col">
                             <div class="card card-custom h-100">
-                                <img src="img/SlotCassino.png" class="card-img-top card-img-top-custom" alt="Imagem do Projeto">
+                                <img src="img/SlotCassino.png" class="card-img-top card-img-top-custom"
+                                    alt="Imagem do Projeto">
                                 <div class="card-body">
                                     <h5 class="card-title text-purple">Slot de Cassino</h5>
-                                    <p class="card-text">Primeiro proeto feito na programação que simula superficialmente um jogo slot do cassino.</p>
+                                    <p class="card-text">Primeiro proeto feito na programação que simula
+                                        superficialmente um jogo slot do cassino.</p>
                                     <div class="d-flex gap-2 flex-wrap mt-auto">
-                                        <a href="https://github.com/ArtTinto/Roleta-do-Tigrinho" class="btn btn-primary-custom">Ver Mais</a>
-                                        <a href="http://tiktaktoe-web-c70142.pages.alessiojr.com/" class="btn btn-secondary-custom">Jogue</a>
+                                        <a href="https://github.com/ArtTinto/Roleta-do-Tigrinho"
+                                            class="btn btn-primary-custom">Ver Mais</a>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
 
-            <!-- Card Section 4: Habilidades - Adicionado rounded-4 -->
             <div class="card-section rounded-4">
                 <section id="habilidades" class="section-block">
                     <h2 class="custom-h2">Linguagens de Programação</h2>
-                    <!-- ul/li com classes customizadas para grid e estilo de lista -->
                     <ul class="skills-grid">
                         <li class="skill-item"><strong>Python</strong> - 1 ano</li>
                         <li class="skill-item"><strong>Java</strong> - 6 meses</li>
                     </ul>
                 </section>
             </div>
-            
-            <!-- Card Section 5: Contato - Adicionado rounded-4 -->
+
             <div class="card-section rounded-4">
                 <section id="contato" class="py-5 section-block">
                     <div class="container">
@@ -204,13 +198,14 @@
 
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-8 col-lg-6">
-                                <form class="needs-validation" id="contact" novalidate>
+                                <form class="needs-validation" id="contactForm" novalidate>
                                     <div class="mb-3">
                                         <label for="nome" class="form-label text-white">Nome Completo</label>
                                         <input type="text" class="form-control" id="nome" name="nome" minlength="3"
-                                            maxlength="100" pattern="[A-Za -z\s]+" placeholder="Digite seu nome"
+                                            maxlength="100" pattern="[A-Za-zÀ-ú\s]+" placeholder="Digite seu nome"
                                             required>
-                                        <div class="invalid-feedback">Insira um nome valido.</div>
+                                        <div class="invalid-feedback">Insira um nome válido (apenas letras e espaços,
+                                            mínimo 3 caracteres).</div>
                                         <div class="valid-feedback">Válido!</div>
                                     </div>
 
@@ -234,22 +229,27 @@
                                         <div class="invalid-feedback">Por favor, selecione um assunto.</div>
                                     </div>
 
+                                    <div class="mb-3" id="subtopicoContainer" style="display: none; opacity: 0;">
+                                        <label for="subtopico" class="form-label text-white">Subtópico</label>
+                                        <select class="form-select" id="subtopico" name="subtopico">
+                                        </select>
+                                        <div class="invalid-feedback">Por favor, selecione um subtópico.</div>
+                                    </div>
+
                                     <div class="mb-3">
                                         <label for="mensagem" class="form-label text-white">Mensagem</label>
                                         <textarea class="form-control" id="mensagem" rows="5" minlength="10"
-                                            maxlength="1000" placeholder="Ensira sua mensagem..." required>
-                                        </textarea>
-                                        <div class="invalid-feedback">A mensagem tem que ter no minimo 10 caracteres ou no maximo 1000.</div>
+                                            maxlength="1000" placeholder="Insira sua mensagem..." required></textarea>
+                                        <div class="invalid-feedback">A mensagem deve ter no mínimo 10 e no máximo 1000
+                                            caracteres.</div>
                                         <small class="form-text text-white-50">
                                             <span id="charCount">0</span> /1000 caracteres
                                         </small>
                                     </div>
 
-                                    <!-- btn-pulse custom class for animation -->
                                     <div class="btn-pulse">
                                         <div class="d-grid">
-                                            <!-- btn-submit custom class for color -->
-                                            <button class="btn btn-submit btn-lg" type="submit">
+                                            <button class="btn btn-submit btn-lg" type="submit" id="submitBtn">
                                                 <span class=" spinner-border spinner-border-sm d-none me-2"
                                                     id="loadingSpinner"></span>
                                                 <i class="bi bi-send me-2"></i>
@@ -264,16 +264,12 @@
                 </section>
             </div>
 
-            <!-- Card Section 6: Informações Complementares - Adicionado rounded-4 -->
             <div class="card-section rounded-4">
                 <div class="complement-inf">
-                    <!-- aside com rounded e text-center (aside-custom) -->
                     <aside class="aside-custom">
                         <h2 class="custom-h2">Informações Complementares</h2>
-                        
-                        <!-- NOVO CONTAINER FLEXÍVEL para simetria -->
-                        <ul class="list-unstyled aside-item-wrapper"> 
-                            <!-- Classe aside-li-style para estilos únicos e mb-0 para espaçamento controlado -->
+
+                        <ul class="list-unstyled aside-item-wrapper">
                             <li class="skill-item aside-li-style mb-0">Inglês Médio</li>
                             <li class="skill-item aside-li-style mb-0">Disponível</li>
                         </ul>
@@ -283,16 +279,14 @@
         </main>
     </div>
 
-
-    <!-- Footer: bg-dark, text-white, padding -->
     <footer class="bg-dark text-white pt-5 pb-4">
         <div class="container">
             <div class="row text-center text-md-start">
-                <!-- Nav de ícones: list-unstyled, d-flex, justify-content-center, flex-wrap -->
                 <ul class="nav col-12 justify-content-center list-unstyled d-flex flex-wrap flex-row">
                     <li class="mx-3 mb-2 footer-icon-item">
                         <a class="text-white-50" href="https://www.instagram.com/art.tinto/" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="icon-footer" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="icon-footer" viewBox="0 0 16 16">
                                 <path
                                     d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
                                 <use xlink:href="#instagram"></use>
@@ -302,7 +296,8 @@
 
                     <li class="mx-3 mb-2 footer-icon-item">
                         <a class="text-white-50" href="https://web.whatsapp.com/" aria-label="Whatsapp">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="icon-footer" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="icon-footer" viewBox="0 0 16 16">
                                 <path
                                     d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
                             </svg>
@@ -310,8 +305,10 @@
                     </li>
 
                     <li class="mx-3 mb-2 footer-icon-item">
-                        <a class="text-white-50" href="https://github.com/ArtTinto?tab=repositories" aria-label="GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="icon-footer" viewBox="0 0 16 16">
+                        <a class="text-white-50" href="https://github.com/ArtTinto?tab=repositories"
+                            aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="icon-footer" viewBox="0 0 16 16">
                                 <path
                                     d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
                             </svg>
@@ -319,8 +316,10 @@
                     </li>
 
                     <li class="mx-3 mb-2 footer-icon-item">
-                        <a class="text-white-50" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" aria-label="Gmail">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="icon-footer" viewBox="0 0 16 16">
+                        <a class="text-white-50" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"
+                            aria-label="Gmail">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="icon-footer" viewBox="0 0 16 16">
                                 <path
                                     d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914" />
                             </svg>
@@ -339,4 +338,5 @@
         </div>
     </footer>
 </body>
+
 </html>
