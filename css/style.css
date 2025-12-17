@@ -37,7 +37,6 @@
     to { transform: rotate(360deg); }
 }
 
-/* Card de seção (bg: dimgray) */
 .card-section {
     background-color: dimgray;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -51,6 +50,7 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
+
 /* ===================== NAVEGAÇÃO E BOTÕES ===================== */
 .nav-menu {
     gap: 6rem;
@@ -62,15 +62,12 @@
     border-radius: 4px;
     transition: background-color 0.3s;
     font-size: 1em;
-    /* CAIXA PADRÃO: Cor de fundo base do link */
     background-color: #2c3e50; 
 }
 
 .nav-link-custom:hover {
-    /* HOVER: Muda apenas a cor para a cor de destaque (mais clara) */
-    background-color: #5a6268 !important; 
-    /* Remove o linear-gradient, pois não é mais necessário */
-    background: #5a6268 !important; 
+    background-color: #5a6268; 
+    background: #5a6268; 
 }
 
 .btn-submit{
@@ -86,7 +83,6 @@
 .card-custom {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid white; 
-    /* Esta margem é tratada pelo g-4 no HTML */
     margin-bottom: 0; 
 }
 
@@ -177,18 +173,18 @@ footer .nav {
     .aside-li-style {
         margin-bottom: 1em; 
     }
-
+    
     footer .nav {
         gap: 0;
-        justify-content: space-evenly !important; 
-        flex-wrap: nowrap !important;
+        justify-content: space-evenly; 
+        flex-wrap: nowrap; 
         overflow-x: hidden;
     }
 
     .nav-menu {
         gap: 0;
-        justify-content: space-evenly !important; 
-        flex-wrap: nowrap !important;
+        justify-content: space-evenly; 
+        flex-wrap: nowrap; 
         overflow-x: hidden;
     }
     .nav-link-custom {
