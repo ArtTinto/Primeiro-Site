@@ -34,8 +34,8 @@ h2 {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px 2em 15px; 
-    background-color: transparent; 
+    padding: 0 15px 2em 15px;
+    background-color: transparent;
 }
 
 /* Botão com animação de pulso */
@@ -45,9 +45,17 @@ h2 {
 
 /* Animação pulse */
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Imagens que giram ao passar o mouse */
@@ -57,8 +65,13 @@ h2 {
 
 /* Animação de rotação */
 @keyframes girar {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Seção para evitar quebra dentro de elementos com múltiplos cards */
@@ -71,7 +84,7 @@ h2 {
     color: green;
 }
 
-/* Navbar com padding e posicionamento sticky */
+/* Navbar: Estilo mantido para garantir o sticky do elemento <nav> no HTML. */
 .navbar {
     padding: 1em 0;
     position: sticky;
@@ -188,7 +201,6 @@ a[href^="#"] {
 .table {
     opacity: 0;
     animation: fadeIn 1s ease-in-out forwards;
-    grid: auto;
 }
 
 /* Animação fade in */
@@ -197,6 +209,7 @@ a[href^="#"] {
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -209,13 +222,13 @@ a[href^="#"] {
     padding: 2em;
     margin: 2em 0;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card-section:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .card-section h2 {
@@ -240,57 +253,158 @@ a[href^="#"] {
 
 /* Flex container para alinhar elementos lado a lado */
 .flex-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .flex-item {
-  flex: 1;
-  flex-basis: 200px;
+    flex: 1;
+    flex-basis: 200px;
 }
 
 /* Header com espaço entre logo, nav e contato */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  background-color: #343a40; /* bg-dark */
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 102;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #343a40;
+    /* bg-dark */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 102;
 }
 
 /* Logo do header */
 .logo {
-  flex: 0 0 auto;
+    flex: 0 0 auto;
 }
 
-/* Nav dentro do header */
+/* Nav dentro do header - Estilo original para desktop */
 .nav {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 6rem; /* espaçamento entre os itens do menu */
-  align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
+    flex-wrap: nowrap;
+    display: flex;
+    gap: 6rem;
+    /* espaçamento entre os itens do menu */
 }
 
 .nav a {
-  text-decoration: none;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
 .nav a:hover {
     background: linear-gradient(135deg, darkgray 100%, lightgray 0%);
 }
 
+.icon-footer{
+    color: white
+}
+
+/* ===================== RESPONSIVIDADE ===================== */
+
+/* Ajustes para telas menores que 992px (Tamanho de tablet/desktop pequeno) */
+@media (max-width: 992px) {
+    .container {
+        padding: 0 10px 2em 10px; /* Reduz o padding lateral do container */
+    }
+
+    /* Reduz o espaçamento entre os itens de navegação (se necessário) */
+    .nav {
+        gap: 2rem;
+    }
+}
+
+/* Ajustes para telas menores que 768px (Tamanho de celular) */
+@media (max-width: 768px) {
+    
+    /* NAV (Header): Configurações para o menu de navegação responsivo */
+    nav .nav {
+        /* Garante que os itens de navegação NÃO quebrem linha */
+        flex-wrap: nowrap !important; 
+        /* Remove a rolagem horizontal */
+        overflow-x: hidden; 
+        /* Oculta barras de rolagem vertical que possam aparecer (mantido) */
+        overflow-y: hidden; 
+        /* Distribui o espaço entre os itens */
+        justify-content: space-between !important;
+        /* Garante que o container do nav ocupe a largura total */
+        width: 100%;
+        /* Remove o espaçamento fixo para deixar o flexbox fazer o trabalho */
+        gap: 0; 
+        /* Remove o padding lateral extra que pode causar problemas de rolagem */
+        padding-left: 0.5rem !important; 
+        padding-right: 0.5rem !important;
+    }
+
+    /* Garante que os itens de lista do nav possam encolher */
+    nav .nav-item {
+        /* Permite encolher e crescer para preencher o espaço, com base 0 para distribuição igual */
+        flex: 1 1 0%; 
+        /* Adiciona margem horizontal para criar espaçamento entre os itens */
+        margin: 0 0.2rem;
+        /* Garante que o texto seja centralizado dentro do item */
+        text-align: center; 
+    }
+
+    /* Reduz o padding e o tamanho da fonte do link para que caiba mais texto */
+    nav .nav-item a {
+        padding-left: 0.1rem !important;
+        padding-right: 0.1rem !important;
+        font-size: 0.8em; /* Diminui a fonte levemente */
+    }
+
+    /* FOOTER: Garante que os ícones sociais permaneçam em linha única */
+    footer .nav {
+        /* Força a lista de ícones a não quebrar linha */
+        flex-wrap: nowrap !important;
+        /* Distribui o espaço de forma igual entre os ícones */
+        justify-content: space-evenly !important; 
+        /* Remove o overflow-x */
+        overflow-x: hidden;
+    }
+
+    /* Reduz a margem horizontal dos itens do footer para caberem */
+    footer .nav li {
+        /* O Bootstrap usa mx-3, vamos forçar uma margem menor no mobile */
+        margin-left: 0.5rem !important; 
+        margin-right: 0.5rem !important;
+        /* Garante que os itens não fiquem excessivamente pequenos (opcional, mas seguro) */
+        flex-shrink: 0; 
+    }
+
+    /* Títulos */
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    /* Habilidades e Complementos: Garante que os itens tenham um bom tamanho em telas muito pequenas */
+    #habilidades ul,
+    .complement-inf {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.8rem;
+    }
+
+    /* Imagem de perfil: Garante que seja fluida */
+    .image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .card-section {
+        padding: 1.5em;
+    }
+}
