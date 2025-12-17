@@ -74,9 +74,22 @@ h2 {
     }
 }
 
+/* Seção para evitar quebra dentro de elementos com múltiplos cards */
+.section {
+    break-inside: avoid;
+}
+
 /* Ícone da Nvidia com cor verde (Usado no header) */
 .bi-nvidia {
     color: green;
+}
+
+/* Navbar: Estilo mantido para garantir o sticky do elemento <nav> no HTML. */
+.navbar {
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 /* Aside com gradiente e arredondamento (Usado em 'Informações Complementares') */
@@ -132,6 +145,21 @@ h2 {
     padding-bottom: 0.5em;
 }
 
+/* Links que abrem em nova aba com ícone adicional */
+a[target="_blank"] {
+    position: relative;
+    padding-right: 1.2em;
+}
+
+a[target="_blank"]::after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 0.8em;
+    color: #7f8c8d;
+}
+
 /* Links internos com fundo e bordas arredondadas (Usado no menu de navegação) */
 a[href^="#"] {
     background-color: #2c3e50;
@@ -139,6 +167,12 @@ a[href^="#"] {
     padding: 0.2em 0.5em;
     border-radius: 20px;
     font-size: 0.9em;
+}
+
+/* Texto em inglês em itálico e cor cinza */
+[lang="en"] {
+    font-style: italic;
+    color: #7f8c8d;
 }
 
 /* Lista de complementos em grid responsivo */
@@ -215,6 +249,61 @@ a[href^="#"] {
 
 .card-section img {
     border-radius: 10px;
+}
+
+/* Flex container para alinhar elementos lado a lado */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.flex-item {
+    flex: 1;
+    flex-basis: 200px;
+}
+
+/* Header com espaço entre logo, nav e contato */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #343a40;
+    /* bg-dark */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 102;
+}
+
+/* Logo do header */
+.logo {
+    flex: 0 0 auto;
+}
+
+/* Nav dentro do header - Estilo original para desktop */
+.nav {
+    flex-wrap: nowrap;
+    display: flex;
+    gap: 6rem;
+    /* espaçamento entre os itens do menu */
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav a:hover {
+    background: linear-gradient(135deg, darkgray 100%, lightgray 0%);
 }
 
 .icon-footer{
