@@ -1,26 +1,15 @@
-/* ===================== TAGS ===================== */
-
-/* Aplica margem e padding zero para todos os elementos e ajusta box-sizing */
+/* ===================== TAGS E RESETS ===================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Cor de fundo da página */
-body {
+.bg-light-gray {
     background-color: lightgray;
 }
 
-/* Título principal */
-h1 {
-    font-size: 2.1em;
-    text-align: center;
-    margin-bottom: 0.5em;
-}
-
-/* Títulos secundários */
-h2 {
+.custom-h2 {
     font-size: 1.7em;
     text-align: center;
     border-bottom: 2px solid gray;
@@ -28,202 +17,33 @@ h2 {
     margin: 1.3em 0 1em 0;
 }
 
-/* ===================== CLASSES ===================== */
-
-/* Container principal para centralizar conteúdo e definir largura máxima */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px 2em 15px;
-    background-color: transparent;
-}
-
-/* Botão com animação de pulso */
+/* ===================== ANIMAÇÕES ===================== */
 .btn-pulse {
     animation: pulse 2s infinite;
 }
 
-/* Animação pulse */
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
-/* Imagens que giram ao passar o mouse */
 .image:hover {
     animation: girar 1.5s linear infinite;
 }
 
-/* Animação de rotação */
 @keyframes girar {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-/* Seção para evitar quebra dentro de elementos com múltiplos cards */
-.section {
-    break-inside: avoid;
-}
-
-/* Ícone da Nvidia com cor verde (Usado no header) */
-.bi-nvidia {
-    color: green;
-}
-
-/* Navbar: Estilo mantido para garantir o sticky do elemento <nav> no HTML. */
-.navbar {
-    padding: 1em 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-/* Aside com gradiente e arredondamento (Usado em 'Informações Complementares') */
-.aside {
-    padding: 2em;
-    border-radius: 10px;
-    text-align: center;
-}
-
-/* Seção de habilidades com padding e arredondamento */
-#habilidades {
-    padding: 2em;
-    border-radius: 8px;
-}
-
-/* Lista de habilidades com grid responsivo */
-#habilidades ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1em;
-    list-style: none;
-    padding: 0;
-}
-
-/* Item de habilidade com fundo branco, sombra e hover */
-#habilidades li {
-    background-color: white;
-    padding: 1em;
-    border-radius: 6px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-}
-
-#habilidades li:hover {
-    transform: scale(1.05);
-}
-
-/* Seção de contato com padding e arredondamento */
-#contato {
-    padding: 2em;
-    border-radius: 10px;
-}
-
-/* Estiliza o primeiro e último item da lista do aside */
-.aside ul li:first-child {
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-.aside ul li:last-child {
-    border-bottom: 2px;
-    padding-bottom: 0.5em;
-}
-
-/* Links que abrem em nova aba com ícone adicional */
-a[target="_blank"] {
-    position: relative;
-    padding-right: 1.2em;
-}
-
-a[target="_blank"]::after {
-    content: " ";
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 0.8em;
-    color: #7f8c8d;
-}
-
-/* Links internos com fundo e bordas arredondadas (Usado no menu de navegação) */
-a[href^="#"] {
-    background-color: #2c3e50;
-    color: white;
-    padding: 0.2em 0.5em;
-    border-radius: 20px;
-    font-size: 0.9em;
-}
-
-/* Texto em inglês em itálico e cor cinza */
-[lang="en"] {
-    font-style: italic;
-    color: #7f8c8d;
-}
-
-/* Lista de complementos em grid responsivo */
-.complement-inf {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1em;
-    list-style: none;
-    padding: 0;
-}
-
-.complement-inf ul li {
-    background-color: white;
-    padding: 8px;
-    border-radius: 6px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-}
-
-.complement-inf ul li:hover {
-    transform: scale(1.05);
-}
-
-/* Tabelas com animação de fade in */
-.table {
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-}
-
-/* Animação fade in */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Card de seção com fundo cinza e hover */
+/* Card de seção (bg: dimgray) */
 .card-section {
     background-color: dimgray;
-    padding: 2em;
-    margin: 2em 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 2em;
+    margin-top: 2em; 
+    margin-bottom: 2em;
 }
 
 .card-section:hover {
@@ -231,180 +51,152 @@ a[href^="#"] {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
-.card-section h2 {
-    text-align: center;
-    margin-bottom: 1em;
-}
 
-.card-section ul {
-    padding-left: 1em;
-    list-style: square;
-}
-
-.card-section .table {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.card-section img {
-    border-radius: 10px;
-}
-
-/* Flex container para alinhar elementos lado a lado */
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.flex-item {
-    flex: 1;
-    flex-basis: 200px;
-}
-
-/* Header com espaço entre logo, nav e contato */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #343a40;
-    /* bg-dark */
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 102;
-}
-
-/* Logo do header */
-.logo {
-    flex: 0 0 auto;
-}
-
-/* Nav dentro do header - Estilo original para desktop */
-.nav {
-    flex-wrap: nowrap;
-    display: flex;
+/* ===================== NAVEGAÇÃO E BOTÕES ===================== */
+.nav-menu {
     gap: 6rem;
-    /* espaçamento entre os itens do menu */
 }
 
-.nav a {
+.nav-link-custom {
     text-decoration: none;
-    color: white;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: background-color 0.3s;
+    font-size: 1em;
+    /* CAIXA PADRÃO: Cor de fundo base do link */
+    background-color: #2c3e50; 
 }
 
-.nav a:hover {
-    background: linear-gradient(135deg, darkgray 100%, lightgray 0%);
+.nav-link-custom:hover {
+    /* HOVER: Muda apenas a cor para a cor de destaque (mais clara) */
+    background-color: #5a6268 !important; 
+    /* Remove o linear-gradient, pois não é mais necessário */
+    background: #5a6268 !important; 
 }
 
-.icon-footer{
-    color: white
+.btn-submit{
+    background: #2c3e50;
+    color: white;
 }
+.btn-submit:hover{
+    background: lightslategray;
+    color: white;
+}
+
+/* Estilos de Card de Projeto Customizados */
+.card-custom {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid white; 
+    margin-bottom: 1.5rem;
+}
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.text-purple { color: #9C27B0; }
+.btn-primary-custom { background-color: #9C27B0; border-color: #9C27B0; color: white; }
+.btn-primary-custom:hover { background-color: #7B1FA2; border-color: #7B1FA2; }
+.btn-secondary-custom { background-color: #6c757d; border-color: #6c757d; color: white; }
+.btn-secondary-custom:hover { background-color: #5a6268; border-color: #5a6268; color: white; }
+
+/* ===================== HABILIDADES/COMPLEMENTOS ===================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+}
+
+.skill-item {
+    background-color: white;
+    padding: 1em; 
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+}
+
+.aside-item-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1em; 
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0; 
+}
+
+.aside-li-style {
+    flex: 1; 
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.aside-li-style:first-child {
+    font-weight: bold;
+    color: #2c3e50; 
+}
+.aside-li-style:last-child {
+    border-bottom: 2px solid #ccc;
+}
+
+
+/* ===================== FOOTER ===================== */
+footer .nav {
+    gap: 3rem; 
+}
+
+.footer-icon-item a {
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s, border-radius 0.3s;
+    padding: 0.5rem; 
+    display: inline-block; 
+    border-radius: 8px;
+}
+
+.footer-icon-item a:hover {
+    background-color: #5a6268; 
+    transform: scale(1.1); 
+    color: white !important; 
+}
+
 
 /* ===================== RESPONSIVIDADE ===================== */
-
-/* Ajustes para telas menores que 992px (Tamanho de tablet/desktop pequeno) */
-@media (max-width: 992px) {
-    .container {
-        padding: 0 10px 2em 10px; /* Reduz o padding lateral do container */
-    }
-
-    /* Reduz o espaçamento entre os itens de navegação (se necessário) */
-    .nav {
-        gap: 2rem;
-    }
-}
-
-/* Ajustes para telas menores que 768px (Tamanho de celular) */
 @media (max-width: 768px) {
-    
-    /* NAV (Header): Configurações para o menu de navegação responsivo */
-    nav .nav {
-        /* Garante que os itens de navegação NÃO quebrem linha */
-        flex-wrap: nowrap !important; 
-        /* Remove a rolagem horizontal */
-        overflow-x: hidden; 
-        /* Oculta barras de rolagem vertical que possam aparecer (mantido) */
-        overflow-y: hidden; 
-        /* Distribui o espaço entre os itens */
-        justify-content: space-between !important;
-        /* Garante que o container do nav ocupe a largura total */
-        width: 100%;
-        /* Remove o espaçamento fixo para deixar o flexbox fazer o trabalho */
-        gap: 0; 
-        /* Remove o padding lateral extra que pode causar problemas de rolagem */
-        padding-left: 0.5rem !important; 
-        padding-right: 0.5rem !important;
+    .aside-item-wrapper {
+        flex-direction: column;
+    }
+    .aside-li-style {
+        margin-bottom: 1em; 
     }
 
-    /* Garante que os itens de lista do nav possam encolher */
-    nav .nav-item {
-        /* Permite encolher e crescer para preencher o espaço, com base 0 para distribuição igual */
-        flex: 1 1 0%; 
-        /* Adiciona margem horizontal para criar espaçamento entre os itens */
-        margin: 0 0.2rem;
-        /* Garante que o texto seja centralizado dentro do item */
-        text-align: center; 
-    }
-
-    /* Reduz o padding e o tamanho da fonte do link para que caiba mais texto */
-    nav .nav-item a {
-        padding-left: 0.1rem !important;
-        padding-right: 0.1rem !important;
-        font-size: 0.8em; /* Diminui a fonte levemente */
-    }
-
-    /* FOOTER: Garante que os ícones sociais permaneçam em linha única */
     footer .nav {
-        /* Força a lista de ícones a não quebrar linha */
-        flex-wrap: nowrap !important;
-        /* Distribui o espaço de forma igual entre os ícones */
+        gap: 0;
         justify-content: space-evenly !important; 
-        /* Remove o overflow-x */
+        flex-wrap: nowrap !important;
         overflow-x: hidden;
     }
 
-    /* Reduz a margem horizontal dos itens do footer para caberem */
-    footer .nav li {
-        /* O Bootstrap usa mx-3, vamos forçar uma margem menor no mobile */
-        margin-left: 0.5rem !important; 
-        margin-right: 0.5rem !important;
-        /* Garante que os itens não fiquem excessivamente pequenos (opcional, mas seguro) */
-        flex-shrink: 0; 
+    .nav-menu {
+        gap: 0;
+        justify-content: space-evenly !important; 
+        flex-wrap: nowrap !important;
+        overflow-x: hidden;
+    }
+    .nav-link-custom {
+        padding: 0.5rem 0.2rem;
+        font-size: 0.8em;
     }
 
-    /* Títulos */
-    h1 {
-        font-size: 1.8em;
-    }
+    h1 { font-size: 1.8em; }
+    .custom-h2 { font-size: 1.5em; }
 
-    h2 {
-        font-size: 1.5em;
-    }
-
-    /* Habilidades e Complementos: Garante que os itens tenham um bom tamanho em telas muito pequenas */
-    #habilidades ul,
-    .complement-inf {
+    .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
         gap: 0.8rem;
-    }
-
-    /* Imagem de perfil: Garante que seja fluida */
-    .image {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    .card-section {
-        padding: 1.5em;
     }
 }
