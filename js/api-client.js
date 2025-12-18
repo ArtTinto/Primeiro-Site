@@ -3,77 +3,117 @@ const MAILERSEND_API_URL = 'https://corsproxy.io/?url=' + encodeURIComponent(TAR
 const MAILERSEND_API_KEY = 'mlsn.9f6c795a2ec164a3480f6d8b1104f28afc8af4a7b47e74d5a52ff920ba7ed0fe'; 
 const SENDER_EMAIL = 'MS_hPN9QH@test-p7kx4xwq1d8g9yjr.mlsender.net'; 
 
-async function sendEmail(formData) {
-    const emailData = {
-        from: { email: SENDER_EMAIL, name: 'Portfólio - ' + formData.nome },
-        to: [{ email: 'arthuzao26@gmail.com', name: 'Arthur Ferreira' }],
-        subject: `Contato: ${formData.assunto}`,
-        html: `<p><strong>Nome:</strong> ${formData.nome}</p>
-               <p><strong>Email:</strong> ${formData.email}</p>
-               <p><strong>Mensagem:</strong><br>${formData.mensagem}</p>`,
-        text: `Nome: ${formData.nome}\nEmail: ${formData.email}\nMensagem: ${formData.mensagem}`
-    };
-
-    try {
-        const response = await fetch(MAILERSEND_API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Authorization': `Bearer ${MAILERSEND_API_KEY}`
-            },
-            body: JSON.stringify(emailData)
-        });
-
-        if (!response.ok) throw new Error();
-
-        return { success: true, message: 'Mensagem enviada com sucesso!' };
-    } catch (error) {
-        return { success: false, message: 'Não foi possível enviar a mensagem. Tente novamente.' };
-    }
-}
-
-// Evento de submissão
-form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    if (!this.checkValidity()) {
-        this.classList.add('was-validated');
+// Aguarda o carregamento do DOM para garantir que o formulário existe
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+    
+    if (!form) {
+        console.error("Erro: Formulário 'contactForm' não encontrado no HTML.");
         return;
     }
 
-    const submitBtn = document.getElementById('submitBtn');
-    const spinner = document.getElementById('loadingSpinner');
-    
-    submitBtn.disabled = true;
-    spinner.classList.remove('d-none');
+    async function sendEmail(formData) {
+        const emailData = {
+            from: { email: SENDER_EMAIL, name: 'Portfólio - ' + formData.nome },
+            to: [{ email: 'arthuzao26@gmail.com', name: 'Arthur Ferreira' }],
+            subject: `Contato: ${formData.assunto}`,
+            html: `<p><strong>Nome:</strong> ${formData.nome}</p>
+                   <p><strong>Email:</strong> ${formData.email}</p>
+                   <p><strong>Mensagem:</strong><br>${formData.mensagem}</p>`,
+            text: `Nome: ${formData.nome}\nEmail: ${formData.email}\nMensagem: ${formData.mensagem}`
+        };
 
-    const formData = {
-        nome: document.getElementById('nome').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        assunto: document.getElementById('assunto').value,
-        mensagem: document.getElementById('mensagem').value.trim()
-    };
+        try {
+            const response = await fetch(MAILERSEND_API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${MAILERSEND_API_KEY}`
+                },
+                body: JSON.stringify(emailData)
+            });
 
-    const result = await sendEmail(formData);
-    
-    showAlert(result.success ? 'success' : 'danger', result.message);
+            // O MailerSend retorna 202 Accepted para envios bem-sucedidos
+            if (response.ok || response.status === 202) {
+                return { success: true, message: 'Mensagem enviada com sucesso!' };
+            }
 
-    if (result.success) {
-        this.reset();
-        this.classList.remove('was-validated');
-        document.getElementById('subtopicoContainer').style.display = 'none';
-        document.getElementById('charCount').textContent = '0';
+            // Se não for OK, tentamos ler o erro com segurança
+            const errorText = await response.text();
+            let errorMessage = 'Erro ao enviar email';
+            
+            try {
+                const errorJson = JSON.parse(errorText);
+                errorMessage = errorJson.message || errorMessage;
+                console.error("Erro da API MailerSend:", errorJson);
+            } catch (e) {
+                console.error("Erro bruto da resposta:", errorText);
+            }
+
+            throw new Error(errorMessage);
+
+        } catch (error) {
+            console.error("Erro na requisição:", error);
+            return { success: false, message: error.message || 'Não foi possível enviar a mensagem.' };
+        }
     }
 
-    submitBtn.disabled = false;
-    spinner.classList.add('d-none');
-});
+    // Evento de submissão
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
 
-function showAlert(type, message) {
-    const alert = document.createElement('div');
-    alert.className = `alert alert-${type} alert-dismissible fade show`;
-    alert.innerHTML = `${message}<button type="button" class="btn-close" data-bs-dismiss="alert"></button>`;
-    form.parentNode.insertBefore(alert, form);
-    setTimeout(() => alert.remove(), 5000);
-}
+        if (!this.checkValidity()) {
+            this.classList.add('was-validated');
+            return;
+        }
+
+        const submitBtn = document.getElementById('submitBtn');
+        const spinner = document.getElementById('loadingSpinner');
+        
+        // Bloquear botão e mostrar loading
+        submitBtn.disabled = true;
+        spinner.classList.remove('d-none');
+
+        const formData = {
+            nome: document.getElementById('nome').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            assunto: document.getElementById('assunto').value,
+            mensagem: document.getElementById('mensagem').value.trim()
+        };
+
+        const result = await sendEmail(formData);
+        
+        showAlert(result.success ? 'success' : 'danger', result.message);
+
+        if (result.success) {
+            this.reset();
+            this.classList.remove('was-validated');
+            const subContainer = document.getElementById('subtopicoContainer');
+            if (subContainer) subContainer.style.display = 'none';
+            document.getElementById('charCount').textContent = '0';
+        }
+
+        submitBtn.disabled = false;
+        spinner.classList.add('d-none');
+    });
+
+    function showAlert(type, message) {
+        // Remover alertas anteriores se existirem
+        const existingAlerts = form.parentElement.querySelectorAll('.alert');
+        existingAlerts.forEach(alert => alert.remove());
+
+        const alert = document.createElement('div');
+        alert.className = `alert alert-${type} alert-dismissible fade show mt-3`;
+        alert.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `;
+        form.parentNode.insertBefore(alert, form.nextSibling);
+        
+        // Auto-remover após 5 segundos
+        setTimeout(() => {
+            if (alert.parentNode) alert.remove();
+        }, 5000);
+    }
+});

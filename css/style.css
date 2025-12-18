@@ -93,7 +93,6 @@
     color: white;
 }
 
-/* Estilos de Card de Projeto Customizados */
 .card-custom {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid white;
@@ -105,7 +104,6 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Espaçamento da imagem do card */
 .card-img-top-custom {
     padding: 0.5rem;
 }
@@ -137,7 +135,6 @@
     color: white;
 }
 
-/* Badges de Linguagem nos Cards */
 .badge-java {
     background-color: #b07219;
     color: white;
@@ -253,25 +250,19 @@ footer .nav {
     .nav-menu {
         display: flex;
         flex-wrap: wrap;
-        /* Permite a quebra de linha */
         gap: 10px;
-        /* Espaçamento entre os botões */
         justify-content: center;
         padding: 10px;
     }
 
     .nav-menu li {
-        /* Para forçar 3 itens por linha, calculamos 100% / 3 menos o gap */
-        /* Se quiser que eles fiquem em uma linha só até o limite, use min-width */
         flex: 1 1 calc(30% - 10px);
         min-width: 100px;
-        /* Garante que o botão não fique minúsculo */
         list-style: none;
     }
 
     .nav-link-custom {
         display: block;
-        /* Faz o link ocupar o espaço do li */
         text-align: center;
         padding: 0.5rem 0.2rem;
         font-size: 0.8em;
