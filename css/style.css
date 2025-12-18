@@ -9,8 +9,13 @@
     background-color: lightgray;
 }
 
+p{
+    color: whitesmoke;
+}
+
 .custom-h2 {
     font-size: 1.7em;
+    color: #ccc;
     text-align: center;
     border-bottom: 2px solid gray;
     padding-bottom: 0.3em;
@@ -223,6 +228,7 @@ footer .nav {
     transform: scale(1.1);
     color: white !important;
 }
+
 .image{
     justify-self: center;
     max-width: 300px;
@@ -243,10 +249,10 @@ footer .nav {
         flex-wrap: nowrap;
         overflow-x: hidden;
     }
-.image{
-    justify-self: auto;
-    max-width: 200px;
-}
+    .image{
+        justify-self: auto;
+        max-width: 200px;
+    }
     .nav-menu {
         display: flex;
         flex-wrap: wrap;
