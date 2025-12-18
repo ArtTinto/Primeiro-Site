@@ -102,6 +102,13 @@
 .btn-secondary-custom { background-color: #6c757d; border-color: #6c757d; color: white; }
 .btn-secondary-custom:hover { background-color: #5a6268; border-color: #5a6268; color: white; }
 
+/* Badges de Linguagem nos Cards */
+.badge-java { background-color: #b07219; color: white; }
+.badge-html { background-color: #e34c26; color: white; }
+.badge-css { background-color: #563d7c; color: white; }
+.badge-js { background-color: #f1e05a; color: #333; }
+.badge-python { background-color: #3572A5; color: white; }
+
 /* ===================== HABILIDADES/COMPLEMENTOS ===================== */
 .skills-grid {
     display: grid;
